@@ -7,6 +7,7 @@ export default function Home() {
   const [custId, setCustId] = useState(undefined);
   const [txToken, setToken] = useState(undefined);
   const [mid, setMid] = useState(undefined);
+  const [amount, setAmount] = useState(1);
   const [orderId, setOrderId] = useState(undefined);
   const [gotRes, setGotRes] = useState(false);
 
@@ -16,7 +17,8 @@ export default function Home() {
     let data = {
       custId: custId,
       mobile: mobile,
-      email:email
+      email: email,
+      amount: amount,
     };
 
     console.log(data);
@@ -91,6 +93,17 @@ export default function Home() {
                 name="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
+              />
+              <label htmlFor="lastName" className="for">
+                Amount :
+              </label>
+              <input
+                className="form-control"
+                type="text"
+                maxLength="10"
+                name="amount"
+                value={1}
+                onChange={(e) => setMobile(e.target.value)}
               />
               <br />
               <button type="submit" className="btn btn-success">
